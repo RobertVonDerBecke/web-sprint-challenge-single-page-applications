@@ -38,12 +38,46 @@ export default function Order(props) {
                     <div className='background'>
                         <label for='sauce'>Choice of Sauce</label>
                     </div>
-                    <fieldset name='sauce'>
-                        <input type="radio" value=/>
-                        <input type="radio" value=""/>
-                        <input type="radio" value=""/>
-                    </fieldset>
+                    <label>Original Sauce 
+                    </label>
+                        <input 
+                            type="radio"
+                            name="sauce"
+                            value="orignal"
+                            onChange={onChange}
+                            checked={values.civil === "original"}
 
+                    />
+                    <br/>
+                    <label>Garlic Ranch 
+                        <input 
+                            type="radio"
+                            name="sauce"
+                            value="garlic ranch"
+                            onChange={onChange}
+                            checked={values.civil === 'garlic ranch'}
+                        />
+                    </label>
+                    <br/>
+                    <label>BBQ 
+                        <input 
+                            type="radio"
+                            name="sauce"
+                            value="bbq"
+                            onChange={onChange}
+                            checked={values.civil === 'bbq'}
+                        />
+                    </label>
+                    <br/>
+                    <label>Spinach Alfredo 
+                        <input 
+                            type="radio"
+                            name="sauce"
+                            value="Spinach Alfredo"
+                            onChange={onChange}
+                            checked={values.civil === 'Spinach Alfredo'}
+                        />
+                    </label>
                     
                     
                 </FormGroup>
