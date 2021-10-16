@@ -91,6 +91,7 @@ export default function Order(props) {
                         <input
                             className="form-check-input"
                             type="radio"
+                            id='Spinach'
                             name="sauce"
                             value="Spinach Alfredo"
                             onChange={onChange}
