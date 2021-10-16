@@ -16,7 +16,7 @@ export default function Order(props) {
     
   
     return (
-            <Form onSubmit={onSubmit}>
+            <Form onSubmit={onSubmit} id='pizza-form'>
             <h1>Build Your Own Pizza</h1>
             <div className='errors'>
                 <div>{errors.name}</div>
@@ -254,7 +254,7 @@ export default function Order(props) {
                         placeholder='Enter special instructions here!'
                     />
 
-                <Button disabled={disabled} id='submit-button'>Add to Order</Button>
+                <Button disabled={disabled} id='order-button'>Add to Order</Button>
                 </FormGroup>
             </Form>
     )

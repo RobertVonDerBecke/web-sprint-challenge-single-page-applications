@@ -9,7 +9,7 @@ export default function Home() {
           <div className='mainContent'>
             <Container fluid>
               <h1>Your favorite food, delivered while Coding</h1>
-              <Button id='order-pizza'color='success' href='/order'>Pizza?</Button>
+              <Button id='order-pizza'color='success' href='/pizza'>Pizza?</Button>
             </Container>
           </div>
       </Jumbotron>

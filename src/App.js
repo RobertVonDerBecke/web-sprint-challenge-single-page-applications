@@ -105,7 +105,7 @@ const App = () => {
         <Route path={'/help'}>
           {/* {window.open('https://www.dominos.com/')} */}
         </Route>
-      <Route path={'/order'}>
+      <Route path={'/pizza'}>
           <Order
             values={formValues}
             change={inputChange}
