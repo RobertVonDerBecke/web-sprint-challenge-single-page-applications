@@ -40,9 +40,8 @@ const App = () => {
   const postNewPizza = newPizza => {
     axios.post('https://reqres.in/api/orders', newPizza)
       .then(res => {
-        setPizza(res)
-        console.log(res)
-        console.log(pizza)
+        // setPizza(res)
+        console.log(res.data)
       })
       .catch(err => {
         console.error(err)
@@ -57,32 +56,28 @@ const App = () => {
     
   const inputChange = (name, value) => {
     validate(name, value)
-    setFormValues({
-      ...formValues,
-      [name]: value // NOT AN ARRAY
-    })
+    setFormValues({ ...formValues, [name]: value })
   }
   const formSubmit = () => {
     const newPizza = {
-      Mozzarella: formValues.Mozzarella.checked,
-      Pepperoni: formValues.Pepperoni.checked,
-      Garlic: formValues.Garlic.checked,
-      Bacon: formValues.Bacon.checked,
-      Oregano: formValues.Oregano.checked,
-      Basil: formValues.Basil.checked,
-      Onion: formValues.Onion.checked,
-      Sausage: formValues.Sausage.checked,
-      Tomato: formValues.Tomato.checked,
-      Mushroom: formValues.Mushroom.checked,
-      Olive_oil: formValues.Olive_oil.checked,
-      Red_onion: formValues.Red_onion.checked,
-      gluten: formValues.gluten.checked,
-      sauce: formValues.sauce.value,
-      size: formValues.size.value,
-      special: formValues.special.value
+      Mozzarella: formValues.Mozzarel,
+      Pepperoni: formValues.Pepperoni,
+      Garlic: formValues.Garlic,
+      Bacon: formValues.Bacon,
+      Oregano: formValues.Oregano,
+      Basil: formValues.Basil,
+      Onion: formValues.Onion,
+      Sausage: formValues.Sausage,
+      Tomato: formValues.Tomato,
+      Mushroom: formValues.Mushroom,
+      Olive_oil: formValues.Olive_oil,
+      Red_onion: formValues.Red_onion,
+      gluten: formValues.gluten,
+      sauce: formValues.sauce,
+      size: formValues.size,
+      special: formValues.special
   
     }
-    console.log(newPizza)
     postNewPizza(newPizza);
   }
   useEffect(() => {

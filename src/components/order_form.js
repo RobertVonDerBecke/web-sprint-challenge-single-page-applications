@@ -6,19 +6,16 @@ export default function Order(props) {
     
     const onSubmit = evt => {
       evt.preventDefault()
-        console.log(values)
       submit()
     }
     const onChange = evt => {
         const { name, value, checked, type } = evt.target
         const valueToUse = type === 'checkbox' ? checked : value; // convert browser res of "on" to true or false so it toggles
         change(name, valueToUse)
-        console.log(values)
       }
     
   
     return (
-        <Container>
             <Form onSubmit={onSubmit}>
                 <h1>Build Your Own Pizza</h1>
                 <FormGroup>
@@ -245,7 +242,6 @@ export default function Order(props) {
                 <Button disabled={disabled}>Add to Order</Button>
                 </FormGroup>
             </Form>
-        </Container>
     )
   }
   
