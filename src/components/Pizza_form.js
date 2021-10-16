@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, FormGroup, Input, Container } from 'reactstrap';
 
 export default function Order(props) {
-    const { values, change, submit, disabled } = props;
+    const { values, change, submit, disabled, errors } = props;
     
     const onSubmit = evt => {
       evt.preventDefault()
@@ -17,7 +17,20 @@ export default function Order(props) {
   
     return (
             <Form onSubmit={onSubmit}>
-                <h1>Build Your Own Pizza</h1>
+            <h1>Build Your Own Pizza</h1>
+            <div className='errors'>
+                <div>{errors.name}</div>
+            </div>
+            <label>Enter your Name: 
+                <input className="form-control"
+                    type='text'
+                    id='name-input'
+                    name='name'
+                    value={values.name}
+                    onChange={onChange}
+                    placeholder='Enter Name'
+                />
+            </label>
                 <FormGroup>
                     <div className='background'>
                         <p>Choice of Size</p>
@@ -26,6 +39,7 @@ export default function Order(props) {
                         onChange={onChange}
                         name='size'
                         value={values.size}
+                        id='size-dropdown'
                     >
                         <option value='small'>Small</option>
                         <option value='medium'>medium</option>
@@ -234,12 +248,13 @@ export default function Order(props) {
                     </div>
                     <Input type='textarea'
                         name='special'
+                        id='special-text'
                         value={values.special}
                         onChange={onChange}
                         placeholder='Enter special instructions here!'
                     />
 
-                <Button disabled={disabled}>Add to Order</Button>
+                <Button disabled={disabled} id='submit-button'>Add to Order</Button>
                 </FormGroup>
             </Form>
     )

@@ -5,12 +5,13 @@ import * as yup from 'yup';
 import schema from './validation/formSchema';
 //my components
 import Home from './components/home';
-import Order from './components/order_form';
-import Confirm from './components/confirmation';
+import Order from './components/Pizza_form';
+// import Confirm from './components/confirmation';
 import axios from "axios";
 
 
 const barePizza = {
+  name: '',
   Mozzarella: false,
   Pepperoni: false,
   Garlic: false,
@@ -28,11 +29,14 @@ const barePizza = {
   size: '',
   special: ''
 }
+const intialErr = {
+  name: ''
+}
 const isDisabled = true;
 const App = () => {
   const [pizza, setPizza] = useState();
   const [formValues, setFormValues] = useState(barePizza) // object
-  const [formErrors, setFormErrors] = useState() // object
+  const [formErrors, setFormErrors] = useState(intialErr) // object
   const [disabled, setDisabled] = useState(isDisabled)       // boolean
 
 
@@ -45,6 +49,8 @@ const App = () => {
       })
       .catch(err => {
         console.error(err)
+      }).finally(() => {
+        setFormValues(barePizza)
       })
   }
   const validate = (name, value) => {
@@ -60,7 +66,8 @@ const App = () => {
   }
   const formSubmit = () => {
     const newPizza = {
-      Mozzarella: formValues.Mozzarel,
+      name: formValues.name,
+      Mozzarella: formValues.Mozzarella,
       Pepperoni: formValues.Pepperoni,
       Garlic: formValues.Garlic,
       Bacon: formValues.Bacon,
@@ -104,6 +111,7 @@ const App = () => {
             change={inputChange}
             disabled={disabled}
             submit={formSubmit}
+            errors={formErrors}
           />
       </Route>
       <Route path={'/'}>

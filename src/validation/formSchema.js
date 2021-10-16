@@ -2,6 +2,7 @@
 import * as yup from 'yup';
 
 const formSchema = yup.object().shape({
+    name: yup.string().trim().min(2, "name must be at least 2 characters").required(),
     Mozzarella: yup.boolean(),
     Pepperoni: yup.boolean(),
     Garlic: yup.boolean(),
