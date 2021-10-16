@@ -42,6 +42,7 @@ const App = () => {
       .then(res => {
         setPizza(res)
         console.log(res)
+        console.log(pizza)
       })
       .catch(err => {
         console.error(err)
@@ -63,24 +64,25 @@ const App = () => {
   }
   const formSubmit = () => {
     const newPizza = {
-      Mozzarella: formValues.checked,
-      Pepperoni: formValues.checked,
-      Garlic: formValues.checked,
-      Bacon: formValues.checked,
-      Oregano: formValues.checked,
-      Basil: formValues.checked,
-      Onion: formValues.checked,
-      Sausage: formValues.checked,
-      Tomato: formValues.checked,
-      Mushroom: formValues.checked,
-      Olive_oil: formValues.checked,
-      Red_onion: formValues.checked,
-      gluten: formValues.checked,
-      sauce: formValues.value,
-      size: formValues.value,
-      special: formValues.value
+      Mozzarella: formValues.Mozzarella.checked,
+      Pepperoni: formValues.Pepperoni.checked,
+      Garlic: formValues.Garlic.checked,
+      Bacon: formValues.Bacon.checked,
+      Oregano: formValues.Oregano.checked,
+      Basil: formValues.Basil.checked,
+      Onion: formValues.Onion.checked,
+      Sausage: formValues.Sausage.checked,
+      Tomato: formValues.Tomato.checked,
+      Mushroom: formValues.Mushroom.checked,
+      Olive_oil: formValues.Olive_oil.checked,
+      Red_onion: formValues.Red_onion.checked,
+      gluten: formValues.gluten.checked,
+      sauce: formValues.sauce.value,
+      size: formValues.size.value,
+      special: formValues.special.value
   
     }
+    console.log(newPizza)
     postNewPizza(newPizza);
   }
   useEffect(() => {

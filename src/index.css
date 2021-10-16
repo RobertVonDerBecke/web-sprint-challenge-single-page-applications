@@ -74,3 +74,18 @@ h1 {
 	margin: 2% 0;
 
 }
+.checkboxes {
+	display:flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content:space-around;
+}
+.checkboxes div {
+	margin: 1%;
+}
+.checkboxes .left{
+	margin: auto;
+}
+.checkboxes .right{
+	margin: auto;
+}
